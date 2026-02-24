@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.13.0 on win32)" generated="20260221 15:23:33.347" rpa="false" schemaversion="4">
+<suite id="s1" name="Tc01 Register Login" source="C:\Users\abhir\PycharmProjects\Wipro_2026\robot_framework_capstone_oldoriginal\tests\tc01_register_login.robot">
+<kw name="Open Site" library="common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260221 15:23:33.806" level="INFO">Opening browser 'edge' to base url 'https://ecommerce-playground.lambdatest.io/index.php'.</msg>
+<msg timestamp="20260221 15:23:34.776" level="WARN">There was an error managing MicrosoftEdge (error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_145_WINDOWS): error trying to connect: dns error: No such host is known. (os error 11001)); using driver found in the cache</msg>
+<status status="PASS" starttime="20260221 15:23:33.805" endtime="20260221 15:23:42.602"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260221 15:23:42.603" endtime="20260221 15:23:42.758"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260221 15:23:42.759" endtime="20260221 15:23:42.762"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:33.805" endtime="20260221 15:23:42.762"/>
+</kw>
+<test id="s1-t1" name="Register User With CSV for user Abhi Ram" line="18">
+<kw name="Registration">
+<arg>Abhi</arg>
+<arg>Ram</arg>
+<arg>9876543210</arg>
+<arg>Test@123</arg>
+<kw name="Register New User" library="register_keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260221 15:23:42.784" level="INFO">Opening url 'https://ecommerce-playground.lambdatest.io/index.php'</msg>
+<status status="PASS" starttime="20260221 15:23:42.780" endtime="20260221 15:23:43.895"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Your Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20260221 15:23:43.976" level="INFO">Page title is 'Your Store'.</msg>
+<status status="PASS" starttime="20260221 15:23:43.895" endtime="20260221 15:23:43.976"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>My account</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:23:44.070" level="INFO">Current page contains text 'My account'.</msg>
+<status status="PASS" starttime="20260221 15:23:43.976" endtime="20260221 15:23:44.070"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:23:44.070" endtime="20260221 15:23:44.246"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:23:44.247" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/account") and contains(@class,"dropdown-toggle")]'.</msg>
+<status status="PASS" starttime="20260221 15:23:44.246" endtime="20260221 15:23:46.605"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260221 15:23:47.606" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260221 15:23:46.605" endtime="20260221 15:23:47.606"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:23:47.606" endtime="20260221 15:23:47.640"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:23:47.641" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/register") and contains(text(),"Register")]'.</msg>
+<status status="PASS" starttime="20260221 15:23:47.640" endtime="20260221 15:23:49.805"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Register Account</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20260221 15:23:49.805" endtime="20260221 15:23:49.841"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/register</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:23:49.858" level="INFO">Current location contains 'route=account/register'.</msg>
+<status status="PASS" starttime="20260221 15:23:49.841" endtime="20260221 15:23:49.859"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:42.780" endtime="20260221 15:23:49.859"/>
+</kw>
+<kw name="input firstname" library="register_keywords">
+<arg>${firstname}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIRSTNAME_INPUT}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:23:49.860" level="INFO">Typing text 'Abhi' into text field 'id=input-firstname'.</msg>
+<status status="PASS" starttime="20260221 15:23:49.859" endtime="20260221 15:23:50.107"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:49.859" endtime="20260221 15:23:50.107"/>
+</kw>
+<kw name="input lastname" library="register_keywords">
+<arg>${lastname}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LASTNAME_INPUT}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:23:50.109" level="INFO">Typing text 'Ram' into text field 'id=input-lastname'.</msg>
+<status status="PASS" starttime="20260221 15:23:50.108" endtime="20260221 15:23:50.600"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:50.107" endtime="20260221 15:23:50.601"/>
+</kw>
+<kw name="input email" library="register_keywords">
+<kw name="Generate Unique Email" library="email_generator">
+<kw name="Generate Random String" library="String">
+<var>${random}</var>
+<arg>4</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20260221 15:23:50.602" level="INFO">${random} = 0729</msg>
+<status status="PASS" starttime="20260221 15:23:50.602" endtime="20260221 15:23:50.602"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email}</var>
+<arg>test_user_${random}@gmail.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20260221 15:23:50.603" level="INFO">${email} = test_user_0729@gmail.com</msg>
+<status status="PASS" starttime="20260221 15:23:50.602" endtime="20260221 15:23:50.603"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20260221 15:23:50.604" level="INFO">${EMAIL} = test_user_0729@gmail.com</msg>
+<status status="PASS" starttime="20260221 15:23:50.603" endtime="20260221 15:23:50.604"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Dynamic Email Generated: ${EMAIL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:23:50.604" endtime="20260221 15:23:50.608"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:50.601" endtime="20260221 15:23:50.608"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Registering with Email: ${EMAIL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:23:50.609" endtime="20260221 15:23:50.610"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:23:50.611" level="INFO">Typing text 'test_user_0729@gmail.com' into text field 'id=input-email'.</msg>
+<status status="PASS" starttime="20260221 15:23:50.610" endtime="20260221 15:23:51.655"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:50.601" endtime="20260221 15:23:51.655"/>
+</kw>
+<kw name="input phone" library="register_keywords">
+<arg>${phone}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PHONE_INPUT}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:23:51.656" level="INFO">Typing text '9876543210' into text field 'id=input-telephone'.</msg>
+<status status="PASS" starttime="20260221 15:23:51.655" endtime="20260221 15:23:52.829"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:51.655" endtime="20260221 15:23:52.829"/>
+</kw>
+<kw name="input password" library="register_keywords">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:23:52.830" level="INFO">Typing text 'Test@123' into text field 'id=input-password'.</msg>
+<status status="PASS" starttime="20260221 15:23:52.830" endtime="20260221 15:23:53.345"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CONFIRM_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:23:53.346" level="INFO">Typing text 'Test@123' into text field 'id=input-confirm'.</msg>
+<status status="PASS" starttime="20260221 15:23:53.345" endtime="20260221 15:23:53.830"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${CONFIRM_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20260221 15:23:54.590" level="INFO">Content of text field 'id=input-confirm' is 'Test@123'.</msg>
+<status status="PASS" starttime="20260221 15:23:53.830" endtime="20260221 15:23:54.590"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:52.829" endtime="20260221 15:23:54.590"/>
+</kw>
+<kw name="click agree" library="register_keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AGREE_LABEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:23:54.591" level="INFO">Clicking element 'xpath=//label[@for="input-agree"]'.</msg>
+<status status="PASS" starttime="20260221 15:23:54.591" endtime="20260221 15:23:55.211"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>id=input-agree</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20260221 15:23:55.212" level="INFO">Verifying checkbox 'id=input-agree' is selected.</msg>
+<status status="PASS" starttime="20260221 15:23:55.211" endtime="20260221 15:23:55.418"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:54.590" endtime="20260221 15:23:55.418"/>
+</kw>
+<kw name="click continue" library="register_keywords">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${CONTINUE_BUTTON}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260221 15:23:55.419" endtime="20260221 15:23:55.865"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CONTINUE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20260221 15:23:55.866" level="INFO">Clicking button 'css=input.btn.btn-primary[type="submit"][value="Continue"]'.</msg>
+<status status="PASS" starttime="20260221 15:23:55.866" endtime="20260221 15:23:59.041"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SUCCESS_TEXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:23:59.041" endtime="20260221 15:23:59.210"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Your Account Has Been Created</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:23:59.282" level="INFO">Current page contains text 'Your Account Has Been Created'.</msg>
+<status status="PASS" starttime="20260221 15:23:59.210" endtime="20260221 15:23:59.282"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Registration Completed Successfully for ${firstname}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:23:59.283" endtime="20260221 15:23:59.284"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:55.418" endtime="20260221 15:23:59.285"/>
+</kw>
+<kw name="click logout" library="register_keywords">
+<kw name="Logout User Successfully" library="logout_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:23:59.285" endtime="20260221 15:23:59.366"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:23:59.367" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/account") and contains(@class,"dropdown-toggle")]'.</msg>
+<status status="PASS" starttime="20260221 15:23:59.366" endtime="20260221 15:24:00.959"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260221 15:24:01.990" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260221 15:24:00.959" endtime="20260221 15:24:01.991"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:01.991" endtime="20260221 15:24:02.169"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260221 15:24:02.507" level="INFO">Element 'xpath=//a[contains(@href,"route=account/logout") and contains(text(),"Logout")]' is displayed.</msg>
+<status status="PASS" starttime="20260221 15:24:02.169" endtime="20260221 15:24:02.507"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:02.508" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/logout") and contains(text(),"Logout")]'.</msg>
+<status status="PASS" starttime="20260221 15:24:02.507" endtime="20260221 15:24:05.599"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_TEXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:05.600" endtime="20260221 15:24:05.868"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_TEXT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260221 15:24:06.103" level="INFO">Element 'xpath=//h1[contains(text(),"Account Logout")]' is displayed.</msg>
+<status status="PASS" starttime="20260221 15:24:05.868" endtime="20260221 15:24:06.103"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Account Logout</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:24:06.276" level="INFO">Current page contains text 'Account Logout'.</msg>
+<status status="PASS" starttime="20260221 15:24:06.103" endtime="20260221 15:24:06.276"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/logout</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:24:06.293" level="INFO">Current location contains 'route=account/logout'.</msg>
+<status status="PASS" starttime="20260221 15:24:06.276" endtime="20260221 15:24:06.293"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Logout Completed Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:24:06.293" endtime="20260221 15:24:06.295"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:59.285" endtime="20260221 15:24:06.295"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:59.285" endtime="20260221 15:24:06.295"/>
+</kw>
+<kw name="Login User Successfully" library="login_keywords">
+<arg>${password}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260221 15:24:06.297" level="INFO">Opening url 'https://ecommerce-playground.lambdatest.io/index.php'</msg>
+<status status="PASS" starttime="20260221 15:24:06.297" endtime="20260221 15:24:07.072"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>My account</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:24:07.466" level="INFO">Current page contains text 'My account'.</msg>
+<status status="PASS" starttime="20260221 15:24:07.073" endtime="20260221 15:24:07.466"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:07.466" endtime="20260221 15:24:07.606"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:07.607" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/account") and contains(@class,"dropdown-toggle")]'.</msg>
+<status status="PASS" starttime="20260221 15:24:07.606" endtime="20260221 15:24:10.113"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260221 15:24:11.114" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260221 15:24:10.113" endtime="20260221 15:24:11.114"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGIN_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:11.114" endtime="20260221 15:24:11.418"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:11.419" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/login") and contains(text(),"Login")]'.</msg>
+<status status="PASS" starttime="20260221 15:24:11.418" endtime="20260221 15:24:12.885"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Account Login</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20260221 15:24:12.886" endtime="20260221 15:24:12.938"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/login</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:24:12.957" level="INFO">Current location contains 'route=account/login'.</msg>
+<status status="PASS" starttime="20260221 15:24:12.939" endtime="20260221 15:24:12.957"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Logging in with Email: ${EMAIL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:24:12.957" endtime="20260221 15:24:12.958"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:12.959" level="INFO">Typing text 'test_user_0729@gmail.com' into text field 'id=input-email'.</msg>
+<status status="PASS" starttime="20260221 15:24:12.958" endtime="20260221 15:24:13.245"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:13.246" level="INFO">Typing text 'Test@123' into text field 'id=input-password'.</msg>
+<status status="PASS" starttime="20260221 15:24:13.245" endtime="20260221 15:24:13.460"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:13.461" level="INFO">Clicking button 'css=input.btn.btn-primary[value="Login"]'.</msg>
+<status status="PASS" starttime="20260221 15:24:13.460" endtime="20260221 15:24:13.667"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>My Account</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20260221 15:24:13.667" endtime="20260221 15:24:15.178"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_HEADING}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:15.178" endtime="20260221 15:24:15.271"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>My Account</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:24:15.567" level="INFO">Current page contains text 'My Account'.</msg>
+<status status="PASS" starttime="20260221 15:24:15.271" endtime="20260221 15:24:15.567"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/account</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:24:15.784" level="INFO">Current location contains 'route=account/account'.</msg>
+<status status="PASS" starttime="20260221 15:24:15.568" endtime="20260221 15:24:15.784"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login Successful After Logout</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:24:15.784" endtime="20260221 15:24:15.790"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:06.296" endtime="20260221 15:24:15.790"/>
+</kw>
+<kw name="click logout" library="register_keywords">
+<kw name="Logout User Successfully" library="logout_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:15.791" endtime="20260221 15:24:16.167"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:16.168" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/account") and contains(@class,"dropdown-toggle")]'.</msg>
+<status status="PASS" starttime="20260221 15:24:16.168" endtime="20260221 15:24:17.167"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260221 15:24:18.168" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260221 15:24:17.167" endtime="20260221 15:24:18.168"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:18.168" endtime="20260221 15:24:18.215"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260221 15:24:18.251" level="INFO">Element 'xpath=//a[contains(@href,"route=account/logout") and contains(text(),"Logout")]' is displayed.</msg>
+<status status="PASS" starttime="20260221 15:24:18.215" endtime="20260221 15:24:18.251"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:18.253" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/logout") and contains(text(),"Logout")]'.</msg>
+<status status="PASS" starttime="20260221 15:24:18.251" endtime="20260221 15:24:19.563"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_TEXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:19.563" endtime="20260221 15:24:19.693"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_TEXT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260221 15:24:19.759" level="INFO">Element 'xpath=//h1[contains(text(),"Account Logout")]' is displayed.</msg>
+<status status="PASS" starttime="20260221 15:24:19.693" endtime="20260221 15:24:19.759"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Account Logout</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:24:19.805" level="INFO">Current page contains text 'Account Logout'.</msg>
+<status status="PASS" starttime="20260221 15:24:19.760" endtime="20260221 15:24:19.805"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/logout</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:24:19.821" level="INFO">Current location contains 'route=account/logout'.</msg>
+<status status="PASS" starttime="20260221 15:24:19.805" endtime="20260221 15:24:19.821"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Logout Completed Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:24:19.821" endtime="20260221 15:24:19.833"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:15.791" endtime="20260221 15:24:19.833"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:15.790" endtime="20260221 15:24:19.833"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:42.772" endtime="20260221 15:24:19.835"/>
+</kw>
+<kw name="Capture Screenshot On Failure" library="common" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20260221 15:24:19.929" endtime="20260221 15:24:19.929"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:19.928" endtime="20260221 15:24:19.929"/>
+</kw>
+<status status="PASS" starttime="20260221 15:23:42.762" endtime="20260221 15:24:19.946"/>
+</test>
+<test id="s1-t2" name="Register User With CSV for user Ranga akash" line="18">
+<kw name="Registration">
+<arg>Ranga</arg>
+<arg>akash</arg>
+<arg>9123456789</arg>
+<arg>Ranga@123</arg>
+<kw name="Register New User" library="register_keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260221 15:24:19.960" level="INFO">Opening url 'https://ecommerce-playground.lambdatest.io/index.php'</msg>
+<status status="PASS" starttime="20260221 15:24:19.960" endtime="20260221 15:24:21.327"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Your Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20260221 15:24:21.348" level="INFO">Page title is 'Your Store'.</msg>
+<status status="PASS" starttime="20260221 15:24:21.328" endtime="20260221 15:24:21.348"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>My account</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:24:21.649" level="INFO">Current page contains text 'My account'.</msg>
+<status status="PASS" starttime="20260221 15:24:21.349" endtime="20260221 15:24:21.649"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:21.649" endtime="20260221 15:24:21.794"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:21.796" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/account") and contains(@class,"dropdown-toggle")]'.</msg>
+<status status="PASS" starttime="20260221 15:24:21.795" endtime="20260221 15:24:22.985"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260221 15:24:23.986" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260221 15:24:22.985" endtime="20260221 15:24:23.986"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:24.003" endtime="20260221 15:24:24.138"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:24.139" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/register") and contains(text(),"Register")]'.</msg>
+<status status="PASS" starttime="20260221 15:24:24.138" endtime="20260221 15:24:25.314"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Register Account</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20260221 15:24:25.314" endtime="20260221 15:24:25.447"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/register</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:24:25.507" level="INFO">Current location contains 'route=account/register'.</msg>
+<status status="PASS" starttime="20260221 15:24:25.447" endtime="20260221 15:24:25.507"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:19.959" endtime="20260221 15:24:25.507"/>
+</kw>
+<kw name="input firstname" library="register_keywords">
+<arg>${firstname}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIRSTNAME_INPUT}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:25.509" level="INFO">Typing text 'Ranga' into text field 'id=input-firstname'.</msg>
+<status status="PASS" starttime="20260221 15:24:25.508" endtime="20260221 15:24:25.977"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:25.508" endtime="20260221 15:24:25.977"/>
+</kw>
+<kw name="input lastname" library="register_keywords">
+<arg>${lastname}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LASTNAME_INPUT}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:25.979" level="INFO">Typing text 'akash' into text field 'id=input-lastname'.</msg>
+<status status="PASS" starttime="20260221 15:24:25.978" endtime="20260221 15:24:26.493"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:25.977" endtime="20260221 15:24:26.494"/>
+</kw>
+<kw name="input email" library="register_keywords">
+<kw name="Generate Unique Email" library="email_generator">
+<kw name="Generate Random String" library="String">
+<var>${random}</var>
+<arg>4</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20260221 15:24:26.497" level="INFO">${random} = 9288</msg>
+<status status="PASS" starttime="20260221 15:24:26.495" endtime="20260221 15:24:26.497"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email}</var>
+<arg>test_user_${random}@gmail.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20260221 15:24:26.498" level="INFO">${email} = test_user_9288@gmail.com</msg>
+<status status="PASS" starttime="20260221 15:24:26.497" endtime="20260221 15:24:26.498"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20260221 15:24:26.498" level="INFO">${EMAIL} = test_user_9288@gmail.com</msg>
+<status status="PASS" starttime="20260221 15:24:26.498" endtime="20260221 15:24:26.498"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Dynamic Email Generated: ${EMAIL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:24:26.498" endtime="20260221 15:24:26.525"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:26.495" endtime="20260221 15:24:26.525"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Registering with Email: ${EMAIL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:24:26.526" endtime="20260221 15:24:26.544"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:26.546" level="INFO">Typing text 'test_user_9288@gmail.com' into text field 'id=input-email'.</msg>
+<status status="PASS" starttime="20260221 15:24:26.545" endtime="20260221 15:24:27.096"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:26.494" endtime="20260221 15:24:27.096"/>
+</kw>
+<kw name="input phone" library="register_keywords">
+<arg>${phone}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PHONE_INPUT}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:27.097" level="INFO">Typing text '9123456789' into text field 'id=input-telephone'.</msg>
+<status status="PASS" starttime="20260221 15:24:27.097" endtime="20260221 15:24:27.646"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:27.096" endtime="20260221 15:24:27.646"/>
+</kw>
+<kw name="input password" library="register_keywords">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:27.648" level="INFO">Typing text 'Ranga@123' into text field 'id=input-password'.</msg>
+<status status="PASS" starttime="20260221 15:24:27.647" endtime="20260221 15:24:28.154"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CONFIRM_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:28.156" level="INFO">Typing text 'Ranga@123' into text field 'id=input-confirm'.</msg>
+<status status="PASS" starttime="20260221 15:24:28.155" endtime="20260221 15:24:28.539"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${CONFIRM_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20260221 15:24:28.746" level="INFO">Content of text field 'id=input-confirm' is 'Ranga@123'.</msg>
+<status status="PASS" starttime="20260221 15:24:28.539" endtime="20260221 15:24:28.746"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:27.647" endtime="20260221 15:24:28.746"/>
+</kw>
+<kw name="click agree" library="register_keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AGREE_LABEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:28.747" level="INFO">Clicking element 'xpath=//label[@for="input-agree"]'.</msg>
+<status status="PASS" starttime="20260221 15:24:28.746" endtime="20260221 15:24:28.985"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>id=input-agree</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20260221 15:24:28.986" level="INFO">Verifying checkbox 'id=input-agree' is selected.</msg>
+<status status="PASS" starttime="20260221 15:24:28.985" endtime="20260221 15:24:29.180"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:28.746" endtime="20260221 15:24:29.180"/>
+</kw>
+<kw name="click continue" library="register_keywords">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${CONTINUE_BUTTON}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260221 15:24:29.180" endtime="20260221 15:24:29.547"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CONTINUE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:29.548" level="INFO">Clicking button 'css=input.btn.btn-primary[type="submit"][value="Continue"]'.</msg>
+<status status="PASS" starttime="20260221 15:24:29.547" endtime="20260221 15:24:29.787"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SUCCESS_TEXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:29.787" endtime="20260221 15:24:31.179"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Your Account Has Been Created</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:24:31.285" level="INFO">Current page contains text 'Your Account Has Been Created'.</msg>
+<status status="PASS" starttime="20260221 15:24:31.179" endtime="20260221 15:24:31.285"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Registration Completed Successfully for ${firstname}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:24:31.286" endtime="20260221 15:24:31.287"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:29.180" endtime="20260221 15:24:31.287"/>
+</kw>
+<kw name="click logout" library="register_keywords">
+<kw name="Logout User Successfully" library="logout_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:31.288" endtime="20260221 15:24:31.372"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:31.374" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/account") and contains(@class,"dropdown-toggle")]'.</msg>
+<status status="PASS" starttime="20260221 15:24:31.372" endtime="20260221 15:24:32.282"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260221 15:24:33.295" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260221 15:24:32.282" endtime="20260221 15:24:33.295"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:33.295" endtime="20260221 15:24:33.422"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260221 15:24:33.548" level="INFO">Element 'xpath=//a[contains(@href,"route=account/logout") and contains(text(),"Logout")]' is displayed.</msg>
+<status status="PASS" starttime="20260221 15:24:33.422" endtime="20260221 15:24:33.548"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:33.549" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/logout") and contains(text(),"Logout")]'.</msg>
+<status status="PASS" starttime="20260221 15:24:33.548" endtime="20260221 15:24:34.795"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_TEXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:34.795" endtime="20260221 15:24:34.936"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_TEXT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260221 15:24:35.246" level="INFO">Element 'xpath=//h1[contains(text(),"Account Logout")]' is displayed.</msg>
+<status status="PASS" starttime="20260221 15:24:34.936" endtime="20260221 15:24:35.247"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Account Logout</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:24:35.373" level="INFO">Current page contains text 'Account Logout'.</msg>
+<status status="PASS" starttime="20260221 15:24:35.247" endtime="20260221 15:24:35.373"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/logout</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:24:35.400" level="INFO">Current location contains 'route=account/logout'.</msg>
+<status status="PASS" starttime="20260221 15:24:35.373" endtime="20260221 15:24:35.400"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Logout Completed Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:24:35.400" endtime="20260221 15:24:35.401"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:31.288" endtime="20260221 15:24:35.401"/>
+</kw>
+<status status="PASS" starttime="20260221 15:24:31.288" endtime="20260221 15:24:35.401"/>
+</kw>
+<kw name="Login User Successfully" library="login_keywords">
+<arg>${password}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260221 15:24:35.401" level="INFO">Opening url 'https://ecommerce-playground.lambdatest.io/index.php'</msg>
+<status status="PASS" starttime="20260221 15:24:35.401" endtime="20260221 15:24:36.559"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>My account</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:24:36.962" level="INFO">Current page contains text 'My account'.</msg>
+<status status="PASS" starttime="20260221 15:24:36.559" endtime="20260221 15:24:36.962"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:36.963" endtime="20260221 15:24:37.098"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:37.099" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/account") and contains(@class,"dropdown-toggle")]'.</msg>
+<status status="PASS" starttime="20260221 15:24:37.098" endtime="20260221 15:24:38.974"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260221 15:24:39.976" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260221 15:24:38.975" endtime="20260221 15:24:39.976"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGIN_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:24:39.976" endtime="20260221 15:24:40.134"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:40.136" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/login") and contains(text(),"Login")]'.</msg>
+<status status="PASS" starttime="20260221 15:24:40.135" endtime="20260221 15:24:41.480"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Account Login</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20260221 15:24:41.480" endtime="20260221 15:24:41.566"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/login</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:24:41.583" level="INFO">Current location contains 'route=account/login'.</msg>
+<status status="PASS" starttime="20260221 15:24:41.566" endtime="20260221 15:24:41.583"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Logging in with Email: ${EMAIL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:24:41.583" endtime="20260221 15:24:41.590"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:41.593" level="INFO">Typing text 'test_user_9288@gmail.com' into text field 'id=input-email'.</msg>
+<status status="PASS" starttime="20260221 15:24:41.591" endtime="20260221 15:24:42.452"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:42.454" level="INFO">Typing text 'Ranga@123' into text field 'id=input-password'.</msg>
+<status status="PASS" starttime="20260221 15:24:42.452" endtime="20260221 15:24:48.639"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20260221 15:24:48.640" level="INFO">Clicking button 'css=input.btn.btn-primary[value="Login"]'.</msg>
+<status status="PASS" starttime="20260221 15:24:48.639" endtime="20260221 15:24:52.784"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>My Account</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20260221 15:24:52.785" endtime="20260221 15:24:52.966"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_HEADING}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20260221 15:25:03.692" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20260221 15:25:03.700" level="FAIL">Element 'xpath=//h2[contains(text(),"My Account")]' not visible after 10 seconds.</msg>
+<status status="FAIL" starttime="20260221 15:24:52.966" endtime="20260221 15:25:03.709"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>My Account</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20260221 15:25:03.710" endtime="20260221 15:25:03.710"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/account</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="NOT RUN" starttime="20260221 15:25:03.710" endtime="20260221 15:25:03.710"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login Successful After Logout</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20260221 15:25:03.818" endtime="20260221 15:25:03.819"/>
+</kw>
+<status status="FAIL" starttime="20260221 15:24:35.401" endtime="20260221 15:25:03.819"/>
+</kw>
+<kw name="click logout" library="register_keywords">
+<status status="NOT RUN" starttime="20260221 15:25:03.835" endtime="20260221 15:25:03.835"/>
+</kw>
+<status status="FAIL" starttime="20260221 15:24:19.958" endtime="20260221 15:25:03.835"/>
+</kw>
+<kw name="Capture Screenshot On Failure" library="common" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20260221 15:25:04.389" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20260221 15:25:03.941" endtime="20260221 15:25:04.389"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:03.941" endtime="20260221 15:25:04.390"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:03.941" endtime="20260221 15:25:04.390"/>
+</kw>
+<status status="FAIL" starttime="20260221 15:24:19.952" endtime="20260221 15:25:04.390">Element 'xpath=//h2[contains(text(),"My Account")]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-t3" name="Register User With CSV for user Durga Prasad" line="18">
+<kw name="Registration">
+<arg>Durga</arg>
+<arg>Prasad</arg>
+<arg>9988776655</arg>
+<arg>Prasad@123</arg>
+<kw name="Register New User" library="register_keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260221 15:25:04.400" level="INFO">Opening url 'https://ecommerce-playground.lambdatest.io/index.php'</msg>
+<status status="PASS" starttime="20260221 15:25:04.399" endtime="20260221 15:25:05.646"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Your Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20260221 15:25:05.866" level="INFO">Page title is 'Your Store'.</msg>
+<status status="PASS" starttime="20260221 15:25:05.646" endtime="20260221 15:25:05.866"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>My account</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:25:06.027" level="INFO">Current page contains text 'My account'.</msg>
+<status status="PASS" starttime="20260221 15:25:05.866" endtime="20260221 15:25:06.027"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:25:06.027" endtime="20260221 15:25:06.165"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:06.166" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/account") and contains(@class,"dropdown-toggle")]'.</msg>
+<status status="PASS" starttime="20260221 15:25:06.165" endtime="20260221 15:25:07.593"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260221 15:25:08.611" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260221 15:25:07.594" endtime="20260221 15:25:08.611"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:25:08.611" endtime="20260221 15:25:08.695"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:08.696" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/register") and contains(text(),"Register")]'.</msg>
+<status status="PASS" starttime="20260221 15:25:08.696" endtime="20260221 15:25:09.723"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Register Account</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20260221 15:25:09.723" endtime="20260221 15:25:09.794"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/register</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:25:09.804" level="INFO">Current location contains 'route=account/register'.</msg>
+<status status="PASS" starttime="20260221 15:25:09.794" endtime="20260221 15:25:09.804"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:04.399" endtime="20260221 15:25:09.805"/>
+</kw>
+<kw name="input firstname" library="register_keywords">
+<arg>${firstname}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIRSTNAME_INPUT}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:09.806" level="INFO">Typing text 'Durga' into text field 'id=input-firstname'.</msg>
+<status status="PASS" starttime="20260221 15:25:09.805" endtime="20260221 15:25:10.966"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:09.805" endtime="20260221 15:25:10.967"/>
+</kw>
+<kw name="input lastname" library="register_keywords">
+<arg>${lastname}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LASTNAME_INPUT}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:10.968" level="INFO">Typing text 'Prasad' into text field 'id=input-lastname'.</msg>
+<status status="PASS" starttime="20260221 15:25:10.967" endtime="20260221 15:25:11.864"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:10.967" endtime="20260221 15:25:11.865"/>
+</kw>
+<kw name="input email" library="register_keywords">
+<kw name="Generate Unique Email" library="email_generator">
+<kw name="Generate Random String" library="String">
+<var>${random}</var>
+<arg>4</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20260221 15:25:11.866" level="INFO">${random} = 6020</msg>
+<status status="PASS" starttime="20260221 15:25:11.865" endtime="20260221 15:25:11.866"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email}</var>
+<arg>test_user_${random}@gmail.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20260221 15:25:11.867" level="INFO">${email} = test_user_6020@gmail.com</msg>
+<status status="PASS" starttime="20260221 15:25:11.866" endtime="20260221 15:25:11.867"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20260221 15:25:11.867" level="INFO">${EMAIL} = test_user_6020@gmail.com</msg>
+<status status="PASS" starttime="20260221 15:25:11.867" endtime="20260221 15:25:11.867"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Dynamic Email Generated: ${EMAIL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:25:11.867" endtime="20260221 15:25:11.868"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:11.865" endtime="20260221 15:25:11.868"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Registering with Email: ${EMAIL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:25:11.868" endtime="20260221 15:25:11.869"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:11.870" level="INFO">Typing text 'test_user_6020@gmail.com' into text field 'id=input-email'.</msg>
+<status status="PASS" starttime="20260221 15:25:11.869" endtime="20260221 15:25:12.626"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:11.865" endtime="20260221 15:25:12.626"/>
+</kw>
+<kw name="input phone" library="register_keywords">
+<arg>${phone}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PHONE_INPUT}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:12.627" level="INFO">Typing text '9988776655' into text field 'id=input-telephone'.</msg>
+<status status="PASS" starttime="20260221 15:25:12.626" endtime="20260221 15:25:13.067"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:12.626" endtime="20260221 15:25:13.067"/>
+</kw>
+<kw name="input password" library="register_keywords">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:13.069" level="INFO">Typing text 'Prasad@123' into text field 'id=input-password'.</msg>
+<status status="PASS" starttime="20260221 15:25:13.068" endtime="20260221 15:25:13.610"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CONFIRM_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:13.612" level="INFO">Typing text 'Prasad@123' into text field 'id=input-confirm'.</msg>
+<status status="PASS" starttime="20260221 15:25:13.610" endtime="20260221 15:25:14.105"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>${CONFIRM_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20260221 15:25:14.290" level="INFO">Content of text field 'id=input-confirm' is 'Prasad@123'.</msg>
+<status status="PASS" starttime="20260221 15:25:14.105" endtime="20260221 15:25:14.290"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:13.067" endtime="20260221 15:25:14.291"/>
+</kw>
+<kw name="click agree" library="register_keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AGREE_LABEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:14.293" level="INFO">Clicking element 'xpath=//label[@for="input-agree"]'.</msg>
+<status status="PASS" starttime="20260221 15:25:14.292" endtime="20260221 15:25:14.689"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>id=input-agree</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20260221 15:25:14.690" level="INFO">Verifying checkbox 'id=input-agree' is selected.</msg>
+<status status="PASS" starttime="20260221 15:25:14.690" endtime="20260221 15:25:14.889"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:14.291" endtime="20260221 15:25:14.889"/>
+</kw>
+<kw name="click continue" library="register_keywords">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${CONTINUE_BUTTON}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260221 15:25:14.890" endtime="20260221 15:25:15.186"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CONTINUE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:15.187" level="INFO">Clicking button 'css=input.btn.btn-primary[type="submit"][value="Continue"]'.</msg>
+<status status="PASS" starttime="20260221 15:25:15.186" endtime="20260221 15:25:16.674"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SUCCESS_TEXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:25:16.675" endtime="20260221 15:25:16.933"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Your Account Has Been Created</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:25:17.060" level="INFO">Current page contains text 'Your Account Has Been Created'.</msg>
+<status status="PASS" starttime="20260221 15:25:16.933" endtime="20260221 15:25:17.061"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Registration Completed Successfully for ${firstname}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:25:17.061" endtime="20260221 15:25:17.065"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:14.889" endtime="20260221 15:25:17.065"/>
+</kw>
+<kw name="click logout" library="register_keywords">
+<kw name="Logout User Successfully" library="logout_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:25:17.066" endtime="20260221 15:25:17.220"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:17.221" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/account") and contains(@class,"dropdown-toggle")]'.</msg>
+<status status="PASS" starttime="20260221 15:25:17.220" endtime="20260221 15:25:18.369"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260221 15:25:19.369" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260221 15:25:18.369" endtime="20260221 15:25:19.370"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:25:19.370" endtime="20260221 15:25:19.401"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260221 15:25:19.439" level="INFO">Element 'xpath=//a[contains(@href,"route=account/logout") and contains(text(),"Logout")]' is displayed.</msg>
+<status status="PASS" starttime="20260221 15:25:19.401" endtime="20260221 15:25:19.439"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:19.440" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/logout") and contains(text(),"Logout")]'.</msg>
+<status status="PASS" starttime="20260221 15:25:19.440" endtime="20260221 15:25:20.721"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_TEXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:25:20.722" endtime="20260221 15:25:20.826"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_TEXT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260221 15:25:20.853" level="INFO">Element 'xpath=//h1[contains(text(),"Account Logout")]' is displayed.</msg>
+<status status="PASS" starttime="20260221 15:25:20.826" endtime="20260221 15:25:20.853"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Account Logout</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:25:20.916" level="INFO">Current page contains text 'Account Logout'.</msg>
+<status status="PASS" starttime="20260221 15:25:20.853" endtime="20260221 15:25:20.916"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/logout</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:25:20.933" level="INFO">Current location contains 'route=account/logout'.</msg>
+<status status="PASS" starttime="20260221 15:25:20.916" endtime="20260221 15:25:20.934"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Logout Completed Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:25:20.934" endtime="20260221 15:25:20.935"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:17.065" endtime="20260221 15:25:20.935"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:17.065" endtime="20260221 15:25:20.935"/>
+</kw>
+<kw name="Login User Successfully" library="login_keywords">
+<arg>${password}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260221 15:25:20.936" level="INFO">Opening url 'https://ecommerce-playground.lambdatest.io/index.php'</msg>
+<status status="PASS" starttime="20260221 15:25:20.935" endtime="20260221 15:25:21.670"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>My account</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:25:22.100" level="INFO">Current page contains text 'My account'.</msg>
+<status status="PASS" starttime="20260221 15:25:21.670" endtime="20260221 15:25:22.100"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:25:22.100" endtime="20260221 15:25:22.301"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:22.304" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/account") and contains(@class,"dropdown-toggle")]'.</msg>
+<status status="PASS" starttime="20260221 15:25:22.302" endtime="20260221 15:25:23.833"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260221 15:25:24.840" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260221 15:25:23.833" endtime="20260221 15:25:24.840"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGIN_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:25:24.840" endtime="20260221 15:25:24.906"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:24.907" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/login") and contains(text(),"Login")]'.</msg>
+<status status="PASS" starttime="20260221 15:25:24.906" endtime="20260221 15:25:25.883"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Account Login</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20260221 15:25:25.883" endtime="20260221 15:25:25.947"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/login</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:25:25.959" level="INFO">Current location contains 'route=account/login'.</msg>
+<status status="PASS" starttime="20260221 15:25:25.948" endtime="20260221 15:25:25.959"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Logging in with Email: ${EMAIL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:25:25.959" endtime="20260221 15:25:25.960"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:25.961" level="INFO">Typing text 'test_user_6020@gmail.com' into text field 'id=input-email'.</msg>
+<status status="PASS" starttime="20260221 15:25:25.960" endtime="20260221 15:25:26.528"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:26.529" level="INFO">Typing text 'Prasad@123' into text field 'id=input-password'.</msg>
+<status status="PASS" starttime="20260221 15:25:26.528" endtime="20260221 15:25:26.986"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:26.988" level="INFO">Clicking button 'css=input.btn.btn-primary[value="Login"]'.</msg>
+<status status="PASS" starttime="20260221 15:25:26.987" endtime="20260221 15:25:28.556"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>My Account</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20260221 15:25:28.557" endtime="20260221 15:25:28.580"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_HEADING}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:25:28.581" endtime="20260221 15:25:28.636"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>My Account</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:25:28.682" level="INFO">Current page contains text 'My Account'.</msg>
+<status status="PASS" starttime="20260221 15:25:28.637" endtime="20260221 15:25:28.683"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/account</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:25:28.697" level="INFO">Current location contains 'route=account/account'.</msg>
+<status status="PASS" starttime="20260221 15:25:28.683" endtime="20260221 15:25:28.697"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login Successful After Logout</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:25:28.697" endtime="20260221 15:25:28.698"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:20.935" endtime="20260221 15:25:28.698"/>
+</kw>
+<kw name="click logout" library="register_keywords">
+<kw name="Logout User Successfully" library="logout_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:25:28.699" endtime="20260221 15:25:28.815"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:28.817" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/account") and contains(@class,"dropdown-toggle")]'.</msg>
+<status status="PASS" starttime="20260221 15:25:28.816" endtime="20260221 15:25:29.805"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260221 15:25:30.812" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20260221 15:25:29.805" endtime="20260221 15:25:30.813"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:25:30.824" endtime="20260221 15:25:30.917"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260221 15:25:31.031" level="INFO">Element 'xpath=//a[contains(@href,"route=account/logout") and contains(text(),"Logout")]' is displayed.</msg>
+<status status="PASS" starttime="20260221 15:25:30.917" endtime="20260221 15:25:31.031"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260221 15:25:31.032" level="INFO">Clicking element 'xpath=//a[contains(@href,"route=account/logout") and contains(text(),"Logout")]'.</msg>
+<status status="PASS" starttime="20260221 15:25:31.032" endtime="20260221 15:25:32.435"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_TEXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260221 15:25:32.436" endtime="20260221 15:25:32.620"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_TEXT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260221 15:25:32.685" level="INFO">Element 'xpath=//h1[contains(text(),"Account Logout")]' is displayed.</msg>
+<status status="PASS" starttime="20260221 15:25:32.620" endtime="20260221 15:25:32.685"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Account Logout</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260221 15:25:32.747" level="INFO">Current page contains text 'Account Logout'.</msg>
+<status status="PASS" starttime="20260221 15:25:32.685" endtime="20260221 15:25:32.747"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>route=account/logout</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20260221 15:25:32.757" level="INFO">Current location contains 'route=account/logout'.</msg>
+<status status="PASS" starttime="20260221 15:25:32.747" endtime="20260221 15:25:32.757"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Logout Completed Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20260221 15:25:32.757" endtime="20260221 15:25:32.759"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:28.698" endtime="20260221 15:25:32.759"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:28.698" endtime="20260221 15:25:32.759"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:04.398" endtime="20260221 15:25:32.759"/>
+</kw>
+<kw name="Capture Screenshot On Failure" library="common" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20260221 15:25:32.761" endtime="20260221 15:25:32.762"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:32.761" endtime="20260221 15:25:32.762"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:04.395" endtime="20260221 15:25:32.763"/>
+</test>
+<kw name="Close Site" library="common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260221 15:25:32.766" endtime="20260221 15:25:43.944"/>
+</kw>
+<status status="PASS" starttime="20260221 15:25:32.765" endtime="20260221 15:25:43.944"/>
+</kw>
+<status status="FAIL" starttime="20260221 15:23:33.350" endtime="20260221 15:25:43.944"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="Tc01 Register Login">Tc01 Register Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20260221 15:23:34.776" level="WARN">There was an error managing MicrosoftEdge (error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_145_WINDOWS): error trying to connect: dns error: No such host is known. (os error 11001)); using driver found in the cache</msg>
+</errors>
+</robot>
